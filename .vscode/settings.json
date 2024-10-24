@@ -1,7 +1,8 @@
 {
     "files.associations": {
+        "./**/*.h": "c",
+        "./**/*.hpp": "c",
+
         "windows.h": "c"
     },
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.errorSquiggles": "disabled"
 }

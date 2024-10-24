@@ -1,18 +1,20 @@
 /**
  * @file UIK/Core/internal/defines.h
- * @author CatSCoffeeTeam (catscoffeeteam@gmail.com)
+ * @author CatSCoffeeTeam (contact@catscoffeeteam.com)
  * @brief This file contains global definitions used throughout the 
  *        core and applications referencing it.
  *        Numeric types are asserted statically to guarantee the expected size.
  * 
  * @version 0.1.0
- * @date 2024-10-21
+ * @date 2024-10-24
  * 
  * @copyright User Interface Kit is Copyright (c) CatSCoffeeTeam 2024
  */
 
 #ifndef CatSCoffeeTeam_UIK_Core_defines_h
 #define CatSCoffeeTeam_UIK_Core_defines_h
+
+
 
 // Unsigned integer types
 /** @brief Unsigned 8-bit integer */
@@ -127,21 +129,29 @@ UIK_STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 #endif
 
 // Export and import qualifiers
-#ifdef KEXPORT
+#ifdef UIKEXPORT
     // Export
     #ifdef _MSC_VER
-        #define UIKAPI __declspec(dllexport)
+        #define UIKAPI_ATTR __declspec(dllexport)
+        #define UIKAPI_CALL __stdcall
+        #define UIKAPI_PTR UIKAPI_CALL
     #else
-        #define UIKAPI __attribute__((visibility("default")))
+        #define UIKAPI_ATTR __attribute__((visibility("default")))
+        #define UIKAPI_CALL
+        #define UIKAPI_PTR
     #endif
 #else
     // Import
     #ifdef _MSC_VER
         /** @brief Import/export qualifier */
-        #define UIKAPI __declspec(dllimport)
+        #define UIKAPI_ATTR __declspec(dllimport)
+        #define UIKAPI_CALL __stdcall
+        #define UIKAPI_PTR UIKAPI_CALL
     #else
         /** @brief Import/export qualifier */
-        #define UIKAPI
+        #define UIKAPI_ATTR
+        #define UIKAPI_CALL
+        #define UIKAPI_PTR
     #endif
 #endif
 
@@ -162,5 +172,7 @@ UIK_STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 #else
     #error "Unsupported compiler - don't know how to define deprecations!"
 #endif
+
+
 
 #endif // CatSCoffeeTeam_UIK_Core_defines_h

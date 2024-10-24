@@ -5,8 +5,9 @@
 
 ### Add
 
-- [ ] Linux Support
 - [ ] Windows Support
+- [ ] Linux Support
+- [ ] Android Support
 
 ### Modify
 

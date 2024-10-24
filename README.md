@@ -24,6 +24,7 @@ Starting from version **1.0.0**, UIK will support installation across various pl
 
 - **Windows**
 - **Linux**
+- **Android**
 
 Platform-specific installation guides will be provided with the release to ensure a smooth setup process for each environment.
 
@@ -39,4 +40,4 @@ All libraries mentioned are licensed under the **Apache License 2.0**. For more 
 
 ## Contact
 
-For questions or support, please reach out to us at catscoffeeteam@gmail.com.
+For questions or support, please reach out to us at contanct@catscoffeeteam.com.
